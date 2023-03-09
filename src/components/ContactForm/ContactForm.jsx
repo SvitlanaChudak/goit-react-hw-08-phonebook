@@ -4,8 +4,8 @@ import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Toaster, toast } from 'react-hot-toast';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { getContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 const initialValues = {
         name: '',

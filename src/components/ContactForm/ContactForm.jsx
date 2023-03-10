@@ -1,5 +1,4 @@
 import React from 'react';
-import { ContForm, Button, Input } from './ContactForm.styled';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Toaster, toast } from 'react-hot-toast';
@@ -36,10 +35,10 @@ export const ContactForm = () => {
     
     return (
             <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={FormSchema}>
-            <ContForm>
+            <form>
                 <label htmlFor='name'>Name</label>
                 <ErrorMessage name="name" />
-                    <Input
+                    <input
                      type="text"
                      name="name"
                      pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -49,7 +48,7 @@ export const ContactForm = () => {
                     
                 <label htmlFor='number'>Number</label>
                 <ErrorMessage name="number" />
-                    <Input
+                    <input
                      type="tel"
                      name="number"
                      pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -57,10 +56,10 @@ export const ContactForm = () => {
                      required
                         />
                       <div> 
-                <Button type="submit" >Add contact</Button>
+                <button type="submit" >Add contact</button>
                     <Toaster />
                     </div> 
-                </ContForm>
+                </form>
                 </Formik>
     )
     

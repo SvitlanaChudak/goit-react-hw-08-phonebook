@@ -1,11 +1,11 @@
-
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import { Text, Container } from '@chakra-ui/react'
 
 export default function Register() {
   return (
-    <div>
-        <h1>Registration</h1>
+    <Container display='flex' justifyContent='center' flexWrap='wrap'>
+        <Text paddingRight='150px' mt='20px' mb='10px' fontWeight='700'>Registration form</Text>
       <RegisterForm />
-    </div>
+    </Container>
   );
 }

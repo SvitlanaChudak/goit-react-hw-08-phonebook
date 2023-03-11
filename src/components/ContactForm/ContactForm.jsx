@@ -5,6 +5,7 @@ import { Toaster, toast } from 'react-hot-toast';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
+import { Box, Input, Button } from '@chakra-ui/react'
 
 const initialValues = {
         name: '',
@@ -35,10 +36,11 @@ export const ContactForm = () => {
     
     return (
             <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={FormSchema}>
-            <form>
+            <Box display='flex' flexDirection='column' gap='20px' width='300px' mb='30px' padding='25px' bgColor='#BEE3F8' boxShadow='2xl' borderRadius='5px' fontWeight='700'>
                 <label htmlFor='name'>Name</label>
                 <ErrorMessage name="name" />
-                    <input
+                    <Input 
+                    placeholder='enter name' bgColor='white'
                      type="text"
                      name="name"
                      pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -48,7 +50,7 @@ export const ContactForm = () => {
                     
                 <label htmlFor='number'>Number</label>
                 <ErrorMessage name="number" />
-                    <input
+                    <Input placeholder='enter number' bgColor='white'
                      type="tel"
                      name="number"
                      pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -56,10 +58,10 @@ export const ContactForm = () => {
                      required
                         />
                       <div> 
-                <button type="submit" >Add contact</button>
+                <Button colorScheme='blue' size='sm' ml='75px' type="submit" >Add contact</Button>
                     <Toaster />
                     </div> 
-                </form>
+                </Box>
                 </Formik>
     )
     

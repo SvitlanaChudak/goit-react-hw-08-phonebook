@@ -20,22 +20,24 @@ export const RegisterForm = () => {
 
   return (
     <Container display='flex' flexWrap='wrap' width='300px' justifyContent='center' >
-    <Text mt='20px' mb='10px' fontWeight='700'>Registration form</Text>
-    <Box onSubmit={handleSubmit} autoComplete="off" display='flex' flexDirection='column' alignItems='center' gap='20px' width='300px' mb='30px' padding='25px' bgColor='#BEE3F8' boxShadow='2xl' borderRadius='5px' fontWeight='700' margin='0px'>
+      <Text mt='20px' mb='10px' fontWeight='700'>Registration form</Text>
+        <form onSubmit={handleSubmit} autoComplete="off">
+    <Box display='flex' flexDirection='column' gap='20px' width='300px' mb='30px' padding='25px' bgColor='#BEE3F8' boxShadow='2xl' borderRadius='5px' fontWeight='700' margin='0px'>
       <label>
         Username
-        <Input bgColor='white' type="text" name="name" size='sm'/>
+        <Input type="name" name="name" size='sm' bgColor='white' placeholder='enter name'/>
       </label>
       <label>
         Email
-        <Input bgColor='white' type="email" name="email" size='sm'/>
+        <Input type="email" name="email" size='sm' bgColor='white' placeholder='enter email'/>
       </label>
       <label>
         Password
-        <Input bgColor='white' type="password" name="password" size='sm'/>
+        <Input type="password" name="password" size='sm' bgColor='white' placeholder='enter password'/>
       </label>
-      <Button colorScheme='blue' size='xs' width='80px' type="submit">Register</Button>
-      </Box>
+          <Button colorScheme='blue' size='xs' width='80px' type="submit" ml='auto' mr='auto'>Register</Button>
+        </Box>
+        </form>
       </Container>
   );
 };

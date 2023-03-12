@@ -11,7 +11,7 @@ export const Filter = () => {
   }
     return (
         <Text fontSize='lg' fontWeight='700'>Find contacts by name
-        <Input size='md' mt='10px' mb='10px' width='300px' type="text" name="filter" value={filter} onChange={onChange}/>
+        <Input size='sm' mt='10px' mb='10px' type="text" name="filter" width='300px' value={filter} onChange={onChange}/>
     </Text>
     )
 }

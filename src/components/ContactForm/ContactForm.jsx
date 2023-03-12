@@ -34,13 +34,14 @@ export const ContactForm = () => {
     resetForm();
   }
     
-    return (
-            <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={FormSchema}>
-            <Box display='flex' flexDirection='column' gap='20px' width='300px' mb='30px' padding='25px' bgColor='#BEE3F8' boxShadow='2xl' borderRadius='5px' fontWeight='700'>
-                <label htmlFor='name'>Name</label>
+  return (
+                <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={FormSchema}>
+            <Box width='300px' mb='20px' mt='10px' padding='25px' bgColor='#BEE3F8' boxShadow='2xl' borderRadius='5px' fontWeight='700'>
+                <form>
+          <label htmlFor='name'>Name</label>
                 <ErrorMessage name="name" />
                     <Input 
-                    placeholder='enter name' bgColor='white'
+                    placeholder='enter name' bgColor='white' size='sm' mb='20px'
                      type="text"
                      name="name"
                      pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -50,7 +51,7 @@ export const ContactForm = () => {
                     
                 <label htmlFor='number'>Number</label>
                 <ErrorMessage name="number" />
-                    <Input placeholder='enter number' bgColor='white'
+                    <Input placeholder='enter number' bgColor='white' size='sm' mb='20px'
                      type="tel"
                      name="number"
                      pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -58,12 +59,15 @@ export const ContactForm = () => {
                      required
                         />
                       <div> 
-                <Button colorScheme='blue' size='sm' ml='75px' type="submit" >Add contact</Button>
-                    <Toaster />
-                    </div> 
+              <Button colorScheme='blue' size='sm' type="submit" ml='75px'>Add contact</Button>
+            </div> 
+          </form>
+                              <Toaster />
                 </Box>
                 </Formik>
+
     )
-    
     }
+
+
 

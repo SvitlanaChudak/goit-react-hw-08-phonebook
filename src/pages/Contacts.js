@@ -17,7 +17,7 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <Container>
+    <Container display='flex' flexDirection='column' alignItems='center' width='300px'>
       <Text fontSize='2xl' fontWeight='700' mt='20px'>Your contacts</Text>
       <ContactForm />
       <Filter />

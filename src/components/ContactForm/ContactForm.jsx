@@ -22,7 +22,8 @@ export const ContactForm = () => {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (e, values, { resetForm }) => {
+    e.preventDefault()
     const isExist = contacts.map(contact => contact.name);
     
       if (isExist.includes(values.name)) {

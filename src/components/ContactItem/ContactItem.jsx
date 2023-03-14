@@ -6,7 +6,8 @@ import { Button, Text } from '@chakra-ui/react'
 export const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
     return (
-        <Text fontSize='md' padding='10px' display='flex' alignItems='center' marginBottom='10px' key={id}>{name}: {number} <Button type="button" size='xs' colorScheme='blue' marginLeft='10px' onClick={() => dispatch(deleteContact(id))}>Delete</Button></Text>
+      <Text bgColor='#EBF8FF' boxShadow='2xl' borderRadius='5px' width='300px' padding='10px' mb='10px' fontSize='sm' display='flex' alignItems='center' key={id}>{name}: {number}
+        <Button type="button" size='xs' colorScheme='blue' marginLeft='auto' onClick={() => dispatch(deleteContact(id))}>Delete</Button></Text>
     )
 }
 

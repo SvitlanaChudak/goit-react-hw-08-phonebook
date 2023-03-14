@@ -19,6 +19,7 @@ export const RegisterForm = () => {
   };
 
   return (
+
     <Container display='flex' flexWrap='wrap' width='300px' justifyContent='center' >
       <Text mt='20px' mb='10px' fontWeight='700'>Registration form</Text>
         <form onSubmit={handleSubmit} autoComplete="off">
@@ -39,5 +40,6 @@ export const RegisterForm = () => {
         </Box>
         </form>
       </Container>
+
   );
 };
